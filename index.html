@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6d96b">
+  <title>MOPANI – Misi Pintar Mengaji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">م</div><div><strong>MOPANI</strong><small>Misi Pintar Mengaji</small></div></div>
+    <div class="teacher-name">Ibu Guru Fidyawati M.I. Banti</div>
+  </header>
+
+  <main class="container">
+    <section id="loginView" class="panel login-panel">
+      <div class="sunflower">🌻</div>
+      <h1>Selamat Datang di MOPANI</h1>
+      <p class="muted">Belajar membaca Al-Qur’an melalui materi dan misi bertahap.</p>
+      <div class="grid two">
+        <form id="studentForm" class="subpanel">
+          <h2>Masuk sebagai siswa</h2>
+          <label>Nama siswa<input id="studentName" required placeholder="Nama lengkap"></label>
+          <label>Kelas<input id="studentClass" required placeholder="Contoh: 4A"></label>
+          <label>Nama sekolah<input id="schoolName" required placeholder="Nama sekolah"></label>
+          <button type="submit">Mulai Belajar</button>
+        </form>
+        <form id="teacherForm" class="subpanel">
+          <h2>Masuk sebagai guru</h2>
+          <label>Email guru<input id="teacherEmail" type="email" required placeholder="Email akun guru"></label>
+          <label>Password<input id="teacherPassword" type="password" required placeholder="Password akun guru"></label>
+          <button type="submit" class="secondary">Masuk Dashboard Guru</button>
+        </form>
+      </div>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+
+    <section id="studentView" hidden>
+      <div class="welcome panel">
+        <div><p class="eyebrow">AREA BELAJAR SISWA</p><h1 id="welcomeName">Halo!</h1><p id="studentIdentity" class="muted"></p></div>
+        <div class="stats"><div><strong id="points">0</strong><span>Poin</span></div><div><strong id="completed">0</strong><span>Misi selesai</span></div><div><strong id="badges">0</strong><span>Lencana</span></div></div>
+      </div>
+      <div class="section-heading"><div><p class="eyebrow">PETA PETUALANGAN</p><h2>Pilih Level Belajar</h2></div><button id="studentLogout" class="light small">Keluar</button></div>
+      <div id="levels" class="level-grid"></div>
+      <section id="missionArea" class="panel mission-area" hidden></section>
+    </section>
+
+    <section id="teacherView" hidden>
+      <div class="section-heading"><div><p class="eyebrow">PANEL PENDIDIK</p><h1>Dashboard Guru</h1><p class="muted">Rekap perkembangan siswa yang tersimpan di Cloud Firestore.</p></div><button id="teacherLogout" class="light small">Keluar</button></div>
+      <div class="stats panel teacher-stats"><div><strong id="totalStudents">0</strong><span>Total siswa</span></div><div><strong id="totalPoints">0</strong><span>Total poin</span></div><div><strong id="totalMissions">0</strong><span>Misi diselesaikan</span></div></div>
+      <div class="panel table-wrap"><h2>Data Siswa</h2><div class="table-scroll"><table><thead><tr><th>Nama</th><th>Kelas</th><th>Sekolah</th><th>Poin</th><th>Misi selesai</th></tr></thead><tbody id="studentRows"><tr><td colspan="5">Belum ada data siswa.</td></tr></tbody></table></div></div>
+      <p id="teacherMessage" class="message"></p>
+    </section>
+  </main>
+  <footer>🌻 MOPANI – Misi Pintar Mengaji · Belajar dengan tekun, membaca dengan tartil.</footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
